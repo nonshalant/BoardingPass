@@ -1,10 +1,12 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Main {
 
-    public String age;
+    public int age;
     public String date;
     public String Departure;
     public String Email;
@@ -16,16 +18,12 @@ public class Main {
     public String Trip;
     public String arrival;
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
     public String getArrival() {
         return arrival;
-    }
-
-    public void setArrival(String arrival) {
-        this.arrival = arrival;
     }
 
     public String getDate() {
@@ -68,7 +66,9 @@ public class Main {
         return Trip;
     }
 
-    public void setTrip(String trip) { Trip = trip; }
+    public void setTrip(String trip) {
+        Trip = trip;
+    }
 
     public void setTravel(String travel) {
         Travel = travel;
@@ -98,10 +98,9 @@ public class Main {
         this.date = date;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
-
 
     //main
     public void main(String[] args) { createAPass(); }
@@ -110,56 +109,43 @@ public class Main {
 	// write your code here
         public void createAPass() {
 
+
         //Retrieving the boarding pass information.
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Hey, you want to plan your next trip?");
-        String trip = scan.nextLine();
-        setTrip(trip);
-
-        System.out.println("What's your name?");
-        String name = scan.nextLine();
-        setName(name);
-
-        System.out.println("Are you traveling solo or with a group?");
-        String travel = scan.nextLine();
-        setTravel(travel);
+        String trip = JOptionPane.showInputDialog("Hey, you want to plan your next trip?");
+            System.out.println("Trip: " + trip);
         
-        System.out.println("Are you 21+? If not, please provide guardian information.");
-        String age = scan.nextLine();
-        setAge(age);
-        int parsedAge = Integer.parseInt(age);
-        setNumber(String.valueOf(parsedAge));
+        String name = JOptionPane.showInputDialog("What's your name?");
+            System.out.println("Name: " + name);
+        
+        String travel = JOptionPane.showInputDialog("Are you traveling solo or with a group?");
+            System.out.println("Traveling: " + travel);
+        
+        int age = Integer.parseInt(JOptionPane.showInputDialog("Are you 21+? If not, please provide guardian information."));
+            System.out.println("Age: " +  age);
 
-        System.out.println("What is your email?");
-        String email = scan.nextLine();
-        setEmail(email);
+        String email = JOptionPane.showInputDialog("What is your email?");
+            System.out.println("Email " + email);
 
-        System.out.println("What is your phone number?");
-        String number = scan.nextLine();
-        int parsedNumber = Integer.parseInt(number);
-        setNumber(String.valueOf(parsedNumber));
+        int number = Integer.parseInt(JOptionPane.showInputDialog("What is your phone number?"));
+            System.out.println("Number: " + number);
 
-        System.out.println("What is your gender?");
-        String gender = scan.nextLine();
-        setGender(gender);
+        String gender = JOptionPane.showInputDialog("What is your gender?");
+            System.out.println("Gender: " + gender);
 
-        System.out.println("Enter your boarding pass number please?");
-        String pass = scan.nextLine();
-        setPass(pass);
+        String pass = JOptionPane.showInputDialog("Enter your boarding pass number please?");
+            System.out.println("Boarding Pass " + pass);
 
-        System.out.println("What is the date of your fancy trip?");
-        String date = scan.nextLine();
-        setDate(date);
+        String date = JOptionPane.showInputDialog("What is the date of your fancy trip?");
+            System.out.println("Date: " + date);
 
-        System.out.println("What airport are you departing from and the time?");
-        String departure = scan.nextLine();
-        setDeparture(departure);
+        String departure = JOptionPane.showInputDialog("What airport are you departing from and the time?");
+            System.out.println("Departure: " + departure);
 
-        System.out.println("What is your arrival time?");
-        String arrival = scan.nextLine();
-        setArrival(arrival);
-
+            String arrival = JOptionPane.showInputDialog("What is your arrival time?");
+            System.out.println("Arrival " + arrival);
         scan.close();
+
     }
 }
