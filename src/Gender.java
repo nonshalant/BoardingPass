@@ -4,6 +4,7 @@ public class Gender extends Main {
     {
 
     }
-    public Gender () {
+    public Gender (String gender) {
+        String passengerGender = gender;
     }
 }

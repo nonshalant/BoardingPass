@@ -4,6 +4,7 @@ public class Pass extends Main {
     {
 
     }
-    public Pass () {
+    public Pass(String pass) {
+        String passengerPass = pass;
     }
 }
