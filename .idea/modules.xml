@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BoardingPass.iml" filepath="$PROJECT_DIR$/BoardingPass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Boarding Pass.iml" filepath="$PROJECT_DIR$/Boarding Pass.iml" />
     </modules>
   </component>
 </project>
