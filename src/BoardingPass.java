@@ -101,13 +101,12 @@ public class BoardingPass {
 
     // ------ CONSTRUCTOR -----
 
-    public BoardingPass(){
+    public BoardingPass() {
     }
 
     // ------ OVERLOADED CONSTRUCTOR -----
 
-    public BoardingPass(String trip, String travel, String phoneNumber, String name, String gender, String email, String departure, String date, int age, String pass)
-    {
+    public BoardingPass(String trip, String travel, String phoneNumber, String name, String gender, String email, String departure, String date, int age, String pass) {
         this.Trip = trip;
         this.Travel = travel;
         this.PhoneNumber = phoneNumber;
@@ -137,7 +136,7 @@ public class BoardingPass {
         System.out.println("Traveling: " + travel);
 
         int age = Integer.parseInt(JOptionPane.showInputDialog("Are you 21+? If not, please provide guardian information."));
-        System.out.println("Age: " +  age);
+        System.out.println("Age: " + age);
 
         String email = JOptionPane.showInputDialog("What is your email?");
         System.out.println("Email: " + email);
@@ -164,4 +163,14 @@ public class BoardingPass {
 
     }
 
+    public void discount(int age, String gender, int price) {
+        if (age <= 12) {
+            System.out.println("Price: " + price * .5);
+        } else if (age >= 60) {
+            System.out.println("Price: " + price * .6);
+        } else if (gender.equals("female")) {
+            System.out.println("Price: " + price * .25);
+        }
+    }
 }
+
