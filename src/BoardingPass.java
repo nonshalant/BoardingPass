@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BoardingPass {
@@ -9,7 +10,7 @@ public class BoardingPass {
     public String Gender;
     public String Name;
     public String Pass;
-    public String PhoneNumber;
+    public String number;
     public String Travel;
     public String Trip;
     public String arrival;
@@ -48,13 +49,13 @@ public class BoardingPass {
         return Pass;
     }
 
-    public String getTravel() {
-        return Travel;
-    }
+    public String getTravel() {return Travel;}
 
     public String getTrip() {
         return Trip;
     }
+
+    public String getPhoneNumber() {return number; }
 
 
 // ------- SETTERS -------
@@ -72,7 +73,7 @@ public class BoardingPass {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        number = phoneNumber;
     }
 
     public void setName(String name) {
@@ -106,10 +107,10 @@ public class BoardingPass {
 
     // ------ OVERLOADED CONSTRUCTOR -----
 
-    public BoardingPass(String trip, String travel, String phoneNumber, String name, String gender, String email, String departure, String date, int age, String pass) {
+    public BoardingPass(String trip, String travel, String phoneNumber, String name, String gender, String email, String departure, String date, int age, String pass, String arrival) {
         this.Trip = trip;
         this.Travel = travel;
-        this.PhoneNumber = phoneNumber;
+        this.number = phoneNumber;
         this.Name = name;
         this.Gender = gender;
         this.Email = email;
@@ -117,50 +118,108 @@ public class BoardingPass {
         this.date = date;
         this.age = age;
         this.Pass = pass;
+        this.arrival = arrival;
     }
 
     // ------- RETRIEVING TRAVELER INFO -------
 
-    public void createAPass() {
+    public static void createAPass() {
 
-        //Retrieving the boarding pass information.
-        Scanner scan = new Scanner(System.in);
+        // WE HAVE TO CREATE A VARIABLE TO STORE THE TRAVELERS INFORMATION IN ORDER TO PRINT THE BOARDING PASS.
+        // Retrieving the boarding pass information
 
-        String trip = JOptionPane.showInputDialog("Hello welcome, you want to plan your next trip?");
-        System.out.println("Trip: " + trip);
+        Scanner tripInput = new Scanner(System.in);
+//      String trip = JOptionPane.showInputDialog("Hello welcome, you want to plan your next trip?");
+        System.out.println("Hello! would you like to plan a trip?");
+        String ticketPass = tripInput.nextLine();
 
-        String name = JOptionPane.showInputDialog("What's your name?");
-        System.out.println("Name: " + name);
+        Scanner nameInput = new Scanner(System.in);
+//      String name = JOptionPane.showInputDialog("What's your name?");
+        System.out.println("Enter your full name?");
+        String namePass = nameInput.nextLine();
 
-        String travel = JOptionPane.showInputDialog("Are you traveling solo or with a group?");
-        System.out.println("Traveling: " + travel);
+        Scanner travelInput = new Scanner(System.in);
+//        String travel = JOptionPane.showInputDialog("Are you traveling solo or with a group?");
+//        System.out.println("Traveling: " + travel);
+        System.out.println("Are you traveling solo or with a group?");
+        String travelPass = travelInput.nextLine();
 
-        int age = Integer.parseInt(JOptionPane.showInputDialog("Are you 21+? If not, please provide guardian information."));
-        System.out.println("Age: " + age);
+        Scanner ageInput = new Scanner(System.in);
+//        int agePass = Integer.parseInt(JOptionPane.showInputDialog("Are you 21+? If not, please provide guardian information."));
+//      System.out.println("Age: " + age);
+        System.out.println("Enter your age");
+        int agePass = Integer.parseInt(ageInput.nextLine());
 
-        String email = JOptionPane.showInputDialog("What is your email?");
-        System.out.println("Email: " + email);
+        Scanner emailInput = new Scanner(System.in);
+//        String email = JOptionPane.showInputDialog("What is your email?");
+//        System.out.println("Email: " + email);
+        System.out.println("Whats your email?");
+        String emailPass = emailInput.nextLine();
 
-        int number = Integer.parseInt(JOptionPane.showInputDialog("What is your phone number?"));
-        System.out.println("Number: " + number);
+        Scanner numberInput = new Scanner(System.in);
+//        String number = JOptionPane.showInputDialog("What is your number?");
+//        System.out.println("Number: " + number);
+        System.out.println("Whats your number?");
+        String numberPass = numberInput.nextLine();
 
-        String gender = JOptionPane.showInputDialog("What is your gender?");
-        System.out.println("Gender: " + gender);
+        Scanner genderInput = new Scanner(System.in);
+//        String gender = JOptionPane.showInputDialog("What is your gender?");
+//        System.out.println("Gender: " + gender);
+        System.out.println("What is your gender?");
+        String genderPass = genderInput.nextLine();
 
-        String pass = JOptionPane.showInputDialog("Enter your boarding pass number please?");
-        System.out.println("Boarding Pass: " + pass);
+        Scanner passInput = new Scanner(System.in);
+//        String pass = JOptionPane.showInputDialog("Enter your boarding pass number please?");
+//        System.out.println("Boarding Pass: " + pass);
+        System.out.println("Enter your boarding pass number please");
+        String passPass = passInput.nextLine();
 
-        String date = JOptionPane.showInputDialog("What is the date of your fancy trip?");
-        System.out.println("Date: " + date);
+        Scanner dateInput = new Scanner(System.in);
+//        String date = JOptionPane.showInputDialog("What is the date of your fancy trip?");
+//        System.out.println("Date: " + date);
+        System.out.println("What is the date of your trip?");
+        String datePass = dateInput.nextLine();
 
-        String departure = JOptionPane.showInputDialog("What airport are you departing from and the time?");
-        System.out.println("Departure: " + departure);
+        Scanner departureInput = new Scanner(System.in);
+//        String departure = JOptionPane.showInputDialog("What airport are you departing from and the time?");
+//        System.out.println("Departure: " + departure);
+        System.out.println("What airport are you departing from and the time?");
+        String departurePass = departureInput.nextLine();
 
-        String arrival = JOptionPane.showInputDialog("What is your arrival time?");
-        System.out.println("Arrival: " + arrival);
+        Scanner arrivalInput = new Scanner(System.in);
+//        String arrival = JOptionPane.showInputDialog("What is your arrival time?");
+//        System.out.println("Arrival: " + arrival);
+        System.out.println("What is your arrival time?");
+        String arrivalPass = arrivalInput.nextLine();
 
-        scan.close();
+        // Adding elements to the boarding pass
 
+        checkInfo(ticketPass, travelPass, numberPass, namePass, genderPass, emailPass, departurePass, datePass, agePass, passPass, arrivalPass);
+
+    }
+
+    public static void checkInfo (String ticketPass, String travelPass, String numberPass, String namePass, String genderPass,
+                                  String emailPass, String departurePass, String datePass, int agePass, String passPass, String arrivalPass) {
+        System.out.println("Is this information correct that is listed above?");
+        System.out.println(ticketPass);
+        System.out.println(ticketPass + " " + travelPass + " " + numberPass + " " + namePass + " " + genderPass + " " + emailPass + " " + departurePass + " " + datePass + " " + agePass + " " + passPass + " " + arrivalPass);
+
+        Scanner infoAnswer = new Scanner(System.in);
+        String reply = infoAnswer.nextLine();
+        if (reply.equals ("yes")) {
+            printBoardingPass(ticketPass, travelPass, numberPass, namePass, genderPass, emailPass, departurePass, datePass, agePass, passPass, arrivalPass);
+        } else {
+            createAPass();
+        }
+    }
+    //PRINTING THE BOARDING PASS.
+    public static void printBoardingPass(String tripPass, String travelPass, String numberPass, String namePass, String genderPass,
+                                         String emailPass, String departurePass, String datePass, int agePass, String passPass, String arrivalPass){
+        System.out.println("Boarding Pass #: " + passPass + "\nDate: " + datePass +
+                 "\nDestination: " + tripPass + "\nDeparture Time: " + departurePass + "\nArrival " + arrivalPass +
+                 "\nName: " + namePass + "\nGender: " + genderPass + "\nAge: " + agePass +
+                "\nTravel: " + travelPass + "\nEmail: " + emailPass + "\nPhone Number: "
+                + numberPass);
     }
 
     public void discount(int age, String gender, int price) {
@@ -171,6 +230,10 @@ public class BoardingPass {
         } else if (gender.equals("female")) {
             System.out.println("Price: " + price * .25);
         }
+    }
+
+    public static void main(String[] args) {
+        createAPass();
     }
 }
 
