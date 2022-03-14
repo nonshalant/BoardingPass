@@ -117,7 +117,7 @@ public class Main {
         String trip = scan.nextLine();
         setTrip(trip);
 
-        System.out.println("What's your name?");
+        System.out.println("What is your name?");
         String name = scan.nextLine();
         setName(name);
 
