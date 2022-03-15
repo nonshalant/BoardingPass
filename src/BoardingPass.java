@@ -9,7 +9,7 @@ public class BoardingPass {
     public String Gender;
     public String Name;
     public String Pass;
-    public int number;
+    public String number;
     public String Travel;
     public String Trip;
     public String arrival;
@@ -54,7 +54,7 @@ public class BoardingPass {
         return Trip;
     }
 
-    public int getPhoneNumber() {return number; }
+    public String getPhoneNumber() {return number; }
 
 
 // ------- SETTERS -------
@@ -71,7 +71,7 @@ public class BoardingPass {
         Travel = travel;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         number = phoneNumber;
     }
 
@@ -111,7 +111,7 @@ public class BoardingPass {
 
     // ------ OVERLOADED CONSTRUCTOR -----
 
-    public BoardingPass(String trip, String travel, int phoneNumber, String name, String gender, String email, String departure, String date, int age, String pass, String arrival) {
+    public BoardingPass(String trip, String travel, String phoneNumber, String name, String gender, String email, String departure, String date, int age, String pass, String arrival) {
         this.Trip = trip;
         this.Travel = travel;
         this.number = phoneNumber;
@@ -177,7 +177,7 @@ public class BoardingPass {
 
         //PHONE NUMBER
         Scanner numberInput = new Scanner(System.in);
-        int numberPass = Integer.parseInt(JOptionPane.showInputDialog("What is your phone number?"));
+        String numberPass = JOptionPane.showInputDialog("What is your phone number?");
         System.out.println("Number: " + numberPass);
 
 
@@ -204,7 +204,7 @@ public class BoardingPass {
         checkInfo(ticketPass, travelPass, numberPass, namePass, genderPass, emailPass, departurePass, datePass, agePass, arrivalPass);
     }
 
-    public static void checkInfo (String ticketPass, String travelPass, int numberPass, String namePass, String genderPass,
+    public static void checkInfo (String ticketPass, String travelPass, String numberPass, String namePass, String genderPass,
                                   String emailPass, String departurePass, String datePass, int agePass, String arrivalPass) {
         System.out.println("Is this information correct that is listed above?");
         System.out.println("Did you want to take a trip?: " + ticketPass + "\nDid you travel solo?: " + travelPass +
@@ -223,7 +223,7 @@ public class BoardingPass {
         }
     }
 
-    public static void generateRandomTravelerDetails(String tripPass, String travelPass, int numberPass, String namePass, String genderPass,
+    public static void generateRandomTravelerDetails(String tripPass, String travelPass, String numberPass, String namePass, String genderPass,
                                                      String emailPass, String departurePass, String datePass, int agePass, String arrivalPass){
 
         String[] flightStatus = { "Delayed", "Cancelled", "On Time" };
@@ -245,7 +245,7 @@ public class BoardingPass {
     }
 
     //PRINTING THE BOARDING PASS.
-    public static void printBoardingPass(String tripPass, String travelPass, int numberPass, String namePass, String genderPass,
+    public static void printBoardingPass(String tripPass, String travelPass, String numberPass, String namePass, String genderPass,
                                          String emailPass, String departurePass, String datePass, int agePass, String arrivalPass,
                                          int randomFlightNum, int boardingPassNum, int randomGateNumber, String randomFlightStatus, int randomSeatNumber, int seatNumber, String randomClassType, String randomMembership) {
 
