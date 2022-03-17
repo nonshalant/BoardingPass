@@ -214,11 +214,11 @@ public class BoardingPass {
 
     public static void checkInfo (String ticketPass, String travelPass, String numberPass, String namePass, String genderPass,
                                   String emailPass, String departurePass, String datePass, int agePass, String arrivalPass) {
-        System.out.println("Is this information correct that is listed above?");
-        System.out.println("Did you want to take a trip?: " + ticketPass + "\nDid you travel solo?: " + travelPass +
+        String verify = JOptionPane.showInputDialog("Please verify the information above: " + ticketPass + "\nDid you travel solo?: " + travelPass +
                 "\nYour cell phone number: " + numberPass + "\nWhat is your name " + namePass + "\nWhat is your gender: " + genderPass +
                 "\nWhat is your email?: " + emailPass + "\nWhat airport are you departing from & time?: " + departurePass + "\nDate of your flight?: "
                 + datePass + " " + agePass +  " " + arrivalPass);
+
 
         Scanner infoAnswer = new Scanner(System.in);
         String reply = JOptionPane.showInputDialog("Is this information correct that is listed above?");
