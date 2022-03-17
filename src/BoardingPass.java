@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.util.Scanner;
 
 public class BoardingPass {
-    public int age;
+    public static int age;
     public String date;
     public String Departure;
     public String Email;
@@ -13,6 +13,7 @@ public class BoardingPass {
     public String Travel;
     public String Trip;
     public String arrival;
+    private static int price = 400;
 
     //-------GETTERS.------
 
@@ -138,6 +139,7 @@ public class BoardingPass {
         //WELCOME IN
         Scanner tripInput = new Scanner(System.in);
         String ticketPass = JOptionPane.showInputDialog("Hi welcome to Delta Airlines! Would you like to plan a trip?");
+        // if statement needed
 
 
         //NAME
@@ -155,18 +157,21 @@ public class BoardingPass {
         Scanner travelInput = new Scanner(System.in);
         String travelPass = JOptionPane.showInputDialog("Are you traveling solo or with a group?");
         System.out.println("Traveling: " + travelPass);
+        //if statement needed
 
 
         //AGE
         Scanner ageInput = new Scanner(System.in);
         int agePass = Integer.parseInt(JOptionPane.showInputDialog("Enter your age:"));
         System.out.println("Age: " + agePass);
+        //if statement needed
 
 
         //GENDER
         Scanner genderInput = new Scanner(System.in);
         String genderPass = JOptionPane.showInputDialog("What is your gender?");
         System.out.println("Gender: " + genderPass);
+        // if statement needed
 
 
         //EMAIL
@@ -185,6 +190,7 @@ public class BoardingPass {
         Scanner bagsInput = new Scanner(System.in);
         int bagsPass = Integer.parseInt(JOptionPane.showInputDialog("How many bags are you flying with?"));
         System.out.print("Bags: " + bagsPass);
+        //if statement needed
 
 
         //------ FLIGHT INFO ------
@@ -201,7 +207,9 @@ public class BoardingPass {
 
 
         // Adding elements to the boarding pass
+        discount(agePass, genderPass, price);
         checkInfo(ticketPass, travelPass, numberPass, namePass, genderPass, emailPass, departurePass, datePass, agePass, arrivalPass);
+
     }
 
     public static void checkInfo (String ticketPass, String travelPass, String numberPass, String namePass, String genderPass,
@@ -217,7 +225,8 @@ public class BoardingPass {
         String theReply = "yes";
 
         if (reply.equals(theReply)) {
-            generateRandomTravelerDetails(ticketPass, travelPass, numberPass, namePass, genderPass, emailPass, departurePass, datePass, agePass, arrivalPass);
+            generateRandomTravelerDetails(ticketPass, travelPass, numberPass, namePass, genderPass, emailPass, departurePass,
+                    datePass, agePass, arrivalPass);
         } else {
             createAPass();
         }
@@ -244,33 +253,39 @@ public class BoardingPass {
 
     }
 
+    public static int discount(int agePass, String genderPass, int price) {
+        if (agePass <= 12) {
+            price = (int) (price * .5);
+        } else if (agePass >= 60) {
+            price = (int) (price * .6);
+        } else if (genderPass.equals("female")) {
+            price = (int) (price * .25);
+        }
+    return price;
+    }
+
     //PRINTING THE BOARDING PASS.
     public static void printBoardingPass(String tripPass, String travelPass, String numberPass, String namePass, String genderPass,
                                          String emailPass, String departurePass, String datePass, int agePass, String arrivalPass,
                                          int randomFlightNum, int boardingPassNum, int randomGateNumber, String randomFlightStatus, int randomSeatNumber, int seatNumber, String randomClassType, String randomMembership) {
 
-         JOptionPane.showMessageDialog(null,"Thank you for flying with Delta Airlines! Here is your Boarding Pass: \nBoarding Pass #: " + boardingPassNum + "\nDate: " + datePass + "\nDestination: " + tripPass + "\nDeparture Time: " + departurePass + "\nArrival: " + arrivalPass +
+
+         JOptionPane.showMessageDialog(null,"Thank you for flying with Delta Airlines! Here is your Boarding Pass: \nBoarding Pass #: "
+                 + boardingPassNum + "\nDate: " + datePass + "\nDestination: " + tripPass +
+                 "\nDeparture Time: " + departurePass + "\nArrival: " + arrivalPass +
                  "\nName: " + namePass + "\nGender: " + genderPass + "\nAge: " + agePass +
                  "\nTravel: " + travelPass + "\nEmail: " + emailPass + "\nPhone Number: "
-                 + numberPass + "\nFlight number: " + randomFlightNum + "\nGate number: " + randomGateNumber + "\nFlight Status: " + randomFlightStatus + "\nSeat number: " + randomSeatNumber
+                 + numberPass + "\nFlight number: " + randomFlightNum + "\nGate number: " + randomGateNumber +
+                 "\nFlight Status: " + randomFlightStatus + "\nSeat number: " + randomSeatNumber
                  + "\nClass :" + randomClassType + "\nMembership: " + randomMembership);
-        //System.out.println("Thank you for flying with Delta Airlines! Here is your Boarding Pass. \nBoarding Pass #: " + boardingPassNum + "\nDate: " + datePass +
-                // "\nDestination: " + tripPass + "\nDeparture Time: " + departurePass + "\nArrival: " + arrivalPass +
-                // "\nName: " + namePass + "\nGender: " + genderPass + "\nAge: " + agePass +
-              //  "\nTravel: " + travelPass + "\nEmail: " + emailPass + "\nPhone Number: "
-              //  + numberPass + "\nFlight number: " + randomFlightNum + "\nGate number: " + randomGateNumber + "\nFlight Status: " + randomFlightStatus + "\nSeat number: " + randomSeatNumber
-      //  + "\nClass :" + randomClassType + "\nMembership: " + randomMembership);
+
     }
 
-
-    public void discount(int agePass, String genderPass, int price) {
-        if (age <= 12) {
-            System.out.println("Price: " + price * .5);
-        } else if (agePass >= 60) {
-            System.out.println("Price: " + price * .6);
-        } else if (genderPass.equals("female")) {
-            System.out.println("Price: " + price * .25);
-        }
-    }
+//    public static void discount(double groupDiscount){
+////        int price = 400;
+////        return (int) ((int) price * .5);
+//        System.out.println("working");
+//
+//    }
 }
 
