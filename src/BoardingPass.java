@@ -49,13 +49,17 @@ public class BoardingPass {
         return Pass;
     }
 
-    public String getTravel() {return Travel;}
+    public String getTravel() {
+        return Travel;
+    }
 
     public String getTrip() {
         return Trip;
     }
 
-    public String getPhoneNumber() {return number; }
+    public String getPhoneNumber() {
+        return number;
+    }
 
 
 // ------- SETTERS -------
@@ -157,8 +161,17 @@ public class BoardingPass {
         Scanner travelInput = new Scanner(System.in);
         String travelPass = JOptionPane.showInputDialog("Are you traveling solo or with a group?");
         System.out.println("Traveling: " + travelPass);
-        //if statement needed
 
+
+        String groupPass = JOptionPane.showInputDialog("How many people is in the group?");
+        System.out.println("Group: " + groupPass);
+
+        if (travelInput.equals("group")) {
+            Scanner groupInput = new Scanner(System.in);
+            System.out.println(groupPass);
+        }
+
+/// Stashed Changes.
 
         //AGE
         Scanner ageInput = new Scanner(System.in);
@@ -212,13 +225,13 @@ public class BoardingPass {
 
     }
 
-    public static void checkInfo (String ticketPass, String travelPass, String numberPass, String namePass, String genderPass,
-                                  String emailPass, String departurePass, String datePass, int agePass, String arrivalPass) {
+    public static void checkInfo(String ticketPass, String travelPass, String numberPass, String namePass, String genderPass,
+                                 String emailPass, String departurePass, String datePass, int agePass, String arrivalPass) {
         System.out.println("Is this information correct that is listed above?");
         System.out.println("Did you want to take a trip?: " + ticketPass + "\nDid you travel solo?: " + travelPass +
                 "\nYour cell phone number: " + numberPass + "\nWhat is your name " + namePass + "\nWhat is your gender: " + genderPass +
                 "\nWhat is your email?: " + emailPass + "\nWhat airport are you departing from & time?: " + departurePass + "\nDate of your flight?: "
-                + datePass + " " + agePass +  " " + arrivalPass);
+                + datePass + " " + agePass + " " + arrivalPass);
 
         Scanner infoAnswer = new Scanner(System.in);
         String reply = JOptionPane.showInputDialog("Is this information correct that is listed above?");
@@ -233,19 +246,19 @@ public class BoardingPass {
     }
 
     public static void generateRandomTravelerDetails(String tripPass, String travelPass, String numberPass, String namePass, String genderPass,
-                                                     String emailPass, String departurePass, String datePass, int agePass, String arrivalPass){
+                                                     String emailPass, String departurePass, String datePass, int agePass, String arrivalPass) {
 
-        String[] flightStatus = { "Delayed", "Cancelled", "On Time" };
+        String[] flightStatus = {"Delayed", "Cancelled", "On Time"};
         String[] classType = {"First Class", "Business Class", "Economy", "Economy Premium"};
-        String[] membershipType = {"Platinum Membership", "General Membership", "Silver Membership" , "Gold Membership"};
+        String[] membershipType = {"Platinum Membership", "General Membership", "Silver Membership", "Gold Membership"};
 
         int randomFlightNum = (int) Math.floor(Math.random() * 10000);
-        int boardingPassNum = (int) Math.floor(Math.random()* 10000);
+        int boardingPassNum = (int) Math.floor(Math.random() * 10000);
         int randomGateNumber = (int) Math.floor(Math.random() * 4);
         String randomFlightStatus = flightStatus[(int) Math.floor(Math.random() * 3)];
         int randomFlightDuration = (int) Math.floor(Math.random() * 12);
         int randomSeatNumber = (int) Math.floor(Math.random() * 30);
-        String randomClassType =  classType[(int) Math.floor(Math.random() * 4)];
+        String randomClassType = classType[(int) Math.floor(Math.random() * 4)];
         String randomMembership = membershipType[(int) Math.floor(Math.random() * 4)];
 
         printBoardingPass(tripPass, travelPass, numberPass, namePass, genderPass, emailPass, departurePass, datePass, agePass, arrivalPass,
@@ -261,7 +274,7 @@ public class BoardingPass {
         } else if (genderPass.equals("female")) {
             price = (int) (price * .25);
         }
-    return price;
+        return price;
     }
 
     //PRINTING THE BOARDING PASS.
@@ -270,22 +283,33 @@ public class BoardingPass {
                                          int randomFlightNum, int boardingPassNum, int randomGateNumber, String randomFlightStatus, int randomSeatNumber, int seatNumber, String randomClassType, String randomMembership) {
 
 
-         JOptionPane.showMessageDialog(null,"Thank you for flying with Delta Airlines! Here is your Boarding Pass: \nBoarding Pass #: "
-                 + boardingPassNum + "\nDate: " + datePass + "\nDestination: " + tripPass +
-                 "\nDeparture Time: " + departurePass + "\nArrival: " + arrivalPass +
-                 "\nName: " + namePass + "\nGender: " + genderPass + "\nAge: " + agePass +
-                 "\nTravel: " + travelPass + "\nEmail: " + emailPass + "\nPhone Number: "
-                 + numberPass + "\nFlight number: " + randomFlightNum + "\nGate number: " + randomGateNumber +
-                 "\nFlight Status: " + randomFlightStatus + "\nSeat number: " + randomSeatNumber
-                 + "\nClass :" + randomClassType + "\nMembership: " + randomMembership);
-
+        JOptionPane.showMessageDialog(null, "Thank you for flying with Delta Airlines! Here is your Boarding Pass: \nBoarding Pass #: "
+                + boardingPassNum + "\nDate: " + datePass + "\nDestination: " + tripPass +
+                "\nDeparture Time: " + departurePass + "\nArrival: " + arrivalPass +
+                "\nName: " + namePass + "\nGender: " + genderPass + "\nAge: " + agePass +
+                "\nTravel: " + travelPass + "\nEmail: " + emailPass + "\nPhone Number: "
+                + numberPass + "\nFlight number: " + randomFlightNum + "\nGate number: " + randomGateNumber +
+                "\nFlight Status: " + randomFlightStatus + "\nSeat number: " + randomSeatNumber
+                + "\nClass :" + randomClassType + "\nMembership: " + randomMembership);
     }
-
-//    public static void discount(double groupDiscount){
-////        int price = 400;
-////        return (int) ((int) price * .5);
-//        System.out.println("working");
-//
-//    }
 }
+
+//
+//    public static void discount(int agePass, String genderPass, int price){
+//            if (age <= 12) {
+//                System.out.println("Price: " + price * .5);
+//            } else if (agePass >= 60) {
+//                System.out.println("Price: " + price * .6);
+//            } else if (genderPass.equals("female")) {
+//                System.out.println("Price: " + price * .25);
+//            }
+//        }
+//
+////    public static void discount(double groupDiscount){
+//////        int price = 400;
+//////        return (int) ((int) price * .5);
+////        System.out.println("working");
+////
+////    }
+
 

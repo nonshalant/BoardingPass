@@ -21,7 +21,7 @@ public class Files extends Main {
                 myWriter.write("(\"Boarding Pass #: \" + passPass + \"\\nDate: \" + datePass +\n" +
                         "                 \"\\nDestination: \" + tripPass + \"\\nDeparture Time: \" + departurePass + \"\\nArrival: \" + arrivalPass +\n" +
                         "                 \"\\nName: \" + namePass + \"\\nGender: \" + genderPass + \"\\nAge: \" + agePass +\n" +
-                        "                \"\\nTravel: \" + travelPass + \"\\nEmail: \" + emailPass + \"\\nPhone Number: \"\n" +
+                        "                \"\\nTravel: \" + travelPass + \"\\nEmail: \" + emailPass + \"\\nPhone Number: \"\n"+
                         "                + numberPass);\n" +
                         "    }");
                 myWriter.close();
