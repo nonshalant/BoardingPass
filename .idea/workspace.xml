@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7caea83a-fcfa-4224-8553-342e7ab2fa17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/THINGS WE NEED TO ADD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Boarding Pass/BoardingPass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Boarding Pass/BoardingPass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BoardingPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardingPass.java" afterDir="false" />
@@ -132,6 +133,17 @@
       <updated>1646766908940</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
