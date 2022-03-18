@@ -156,7 +156,7 @@ public class BoardingPass {
         String datePass = JOptionPane.showInputDialog("What is the date of your trip?");
         System.out.println("Date: " + datePass);
 
-w
+
         //SOLO OR GROUP
         Scanner travelInput = new Scanner(System.in);
         String travelPass = JOptionPane.showInputDialog("Are you traveling solo or with a group?");
