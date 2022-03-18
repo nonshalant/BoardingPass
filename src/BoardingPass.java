@@ -238,6 +238,8 @@ public class BoardingPass {
                                  String emailPass, String departurePass, String datePass, int agePass, String arrivalPass) {
         System.out.println("Is this information correct that is listed above?");
         System.out.println("Did you want to take a trip?: " + ticketPass + "\nDid you travel solo?: " + travelPass +
+>>>>>>> 2bd65477949fe2522a434c8d4856c78d09373bb6
+>>>>>>> main
                 "\nYour cell phone number: " + numberPass + "\nWhat is your name " + namePass + "\nWhat is your gender: " + genderPass +
                 "\nWhat is your email?: " + emailPass + "\nWhat airport are you departing from & time?: " + departurePass + "\nDate of your flight?: "
                 + datePass + " " + agePass +  " " + arrivalPass);
